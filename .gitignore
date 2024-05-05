@@ -1,3 +1,7 @@
 # Ignore planning and environment folder
 plan/
 env/
+
+# Other
+MealPrepHQ.code-workspace
+Backend/db.sqlite3
