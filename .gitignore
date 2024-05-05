@@ -1,2 +1,3 @@
-# Ignore folder for planning the app
+# Ignore planning and environment folder
 plan/
+env/
