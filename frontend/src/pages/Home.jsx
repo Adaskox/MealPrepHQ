@@ -21,6 +21,26 @@ function Home() {
       .catch((err) => alert(err));
   };
 
+  const deleteNote = (id) => {
+    api
+      .delete(`/api/notes/delete/${id}`)
+      .then((res) => {
+        if (res.status === 204) alert("Note deleted!");
+        else alert("Failed to delete note.");
+      })
+      .catch((error) => allert(error));
+    getNotes();
+  };
+
+  const createNote = (e) => {
+    e.preventDefault()
+    api.post('api/notes/', { content, title }).then((res) => {
+        if (res.status === 201) alert('Note created!')
+        else alert('Failed to create note.')
+    }).catch((err) => alert(err))
+    getNotes();
+  }
+
   return <div>Home</div>;
 }
 
