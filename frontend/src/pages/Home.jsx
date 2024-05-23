@@ -61,6 +61,15 @@ function Home() {
           onChange={(e) => e.target.value}
           value={title}
         />
+        <label htmlFor="content">Content:</label>
+        <br />
+        <textarea
+          id="content"
+          name="content"
+          required
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        ></textarea>
       </form>
     </div>
   );
