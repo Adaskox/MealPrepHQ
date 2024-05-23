@@ -33,15 +33,37 @@ function Home() {
   };
 
   const createNote = (e) => {
-    e.preventDefault()
-    api.post('api/notes/', { content, title }).then((res) => {
-        if (res.status === 201) alert('Note created!')
-        else alert('Failed to create note.')
-    }).catch((err) => alert(err))
+    e.preventDefault();
+    api
+      .post("api/notes/", { content, title })
+      .then((res) => {
+        if (res.status === 201) alert("Note created!");
+        else alert("Failed to create note.");
+      })
+      .catch((err) => alert(err));
     getNotes();
-  }
+  };
 
-  return <div>Home</div>;
+  return (
+    <div>
+      <div>
+        <h2>Notes</h2>
+      </div>
+      <h2>Create a note</h2>
+      <form onSubmit={CreateNote}>
+        <label htmlFor="title">Title:</label>
+        <br />
+        <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          onChange={(e) => e.target.value}
+          value={title}
+        />
+      </form>
+    </div>
+  );
 }
 
 export default Home;
